@@ -76,34 +76,136 @@ namespace XamlApp
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             String ButAdd = "+";
-            Screen.Text += ButAdd.ToString();
+            Screen.Text += ButAdd;
         }
         private void ButtonSub_Click(object sender, RoutedEventArgs e)
         {
             String ButSub = "-";
-            Screen.Text += ButSub.ToString();
+            Screen.Text += ButSub;
         }
         private void ButtonMul_Click(object sender, RoutedEventArgs e)
         {
             String ButMul = "*";
-            Screen.Text += ButMul.ToString();
+            Screen.Text += ButMul;
         }
         private void ButtonDiv_Click(object sender, RoutedEventArgs e)
         {
             String ButDiv = "/";
-            Screen.Text += ButDiv.ToString();
+            Screen.Text += ButDiv;
         }
-        private void ButtonEqu_Click(object sender, RoutedEventArgs e)
-        {
-
-            int i = Int32.Parse(Screen.Text);
-            string j = i.ToString();
-            MessageBox.Show(j);
-        }
-        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        private void ButtonClean_Click(object sender, RoutedEventArgs e)
         {
             Screen.Text = "";
         }
 
+        private void ButtonDeg_Click(object sender, RoutedEventArgs e)
+        {
+            string ButDeg = "^";
+            Screen.Text += ButDeg;
+        }
+
+        private void ButtonLog_Click(object sender, RoutedEventArgs e)
+        {
+            string ButLog = "log(";
+            Screen.Text += ButLog;
+        }
+
+        private void ButtonBrac_Click(object sender, RoutedEventArgs e)
+        {
+            string ButBrac = ")";
+            Screen.Text += ButBrac;
+        }
+        private void ButtonEqu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                result();
+            }
+            catch (Exception exc)
+            {
+                Screen.Text = "Error!";
+            }
+        }
+
+        private void result()
+        {
+            String op;
+            int iOp = 0;
+            double num1;
+            double num2;
+
+            if (Screen.Text.Contains("+"))
+            {
+                iOp = Screen.Text.IndexOf("+");
+            }
+            else if (Screen.Text.Contains("-"))
+            {
+                iOp = Screen.Text.IndexOf("-");
+            }
+            else if (Screen.Text.Contains("*"))
+            {
+                iOp = Screen.Text.IndexOf("*");
+            }
+            else if (Screen.Text.Contains("/"))
+            {
+                iOp = Screen.Text.IndexOf("/");
+            }
+            else if (Screen.Text.Contains("^"))
+            {
+                iOp = Screen.Text.IndexOf("^");
+            }
+            else { }
+
+            
+            if (Screen.Text.Contains(")"))
+            {
+                Screen.Text = Screen.Text.Substring(4);
+                iOp = Screen.Text.IndexOf(")");
+                op = Screen.Text.Substring(iOp, 1);
+                num1 = Convert.ToDouble(Screen.Text.Substring(0, iOp));
+                num2 = Convert.ToDouble(Screen.Text.Substring(iOp + 1, Screen.Text.Length - iOp - 1));
+            }
+            else
+            {
+                op = Screen.Text.Substring(iOp, 1);
+                num1 = Convert.ToDouble(Screen.Text.Substring(0, iOp));
+                num2 = Convert.ToDouble(Screen.Text.Substring(iOp + 1, Screen.Text.Length - iOp - 1));
+            }
+            
+
+            if (op == "+")
+            {
+                Screen.Text = (num1 + num2).ToString();
+            }
+            else if (op == "-")
+            {
+                Screen.Text = (num1 - num2).ToString();
+            }
+            else if (op == "*")
+            {
+                Screen.Text = (num1 * num2).ToString();
+            }
+            else if (op == "/")
+            {
+                Screen.Text = (num1 / num2).ToString();
+            }
+            else if (op == "^")
+            {
+                double res = 1;
+                for (int i = 0; i < num2; i++)
+                {                
+                    res = res * num1;
+                }
+                Screen.Text = res.ToString();
+            }
+            else if (op == ")")
+            {
+                double res = Math.Log(num2,num1);
+                Screen.Text = res.ToString();
+            }
+
+        }
+
+        
     }
 }

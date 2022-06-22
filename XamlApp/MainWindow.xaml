@@ -7,38 +7,75 @@
         mc:Ignorable="d"
         Title="Калькулятор" Height="550" Width="350">
     <Grid>
-        <TextBox x:Name="Screen" FontSize="34" Height="140" Width="300" Margin="0 -330 0 0" Background="LightBlue"></TextBox>
-        <Button x:Name="button7" FontSize="34" Content="7" Width="60" Height="70" Margin="-240 -80 0 0"
+
+        <TextBox x:Name="Screen" FontSize="34" Height="140" Width="300" Margin="0 -340 0 0" Background="LightBlue"></TextBox>
+        
+        
+        
+        <Button x:Name="buttonDeg" FontSize="11" Content="^" Width="145" Height="20" Margin="-155 -165 0 0"
+                Click="ButtonDeg_Click"> </Button>
+        
+
+        <Button x:Name="buttonLog" FontSize="11" Content="log(" Width="72.5" Height="20" Margin="77.5 -165 0 0"
+                Click="ButtonLog_Click"></Button>
+
+        <Button x:Name="buttonBrac" FontSize="11" Content=")" Width="72.5" Height="20"  Margin="227.5 -165 0 0"
+                Click="ButtonBrac_Click"></Button>
+
+        
+        
+        <Button x:Name="button7" FontSize="34" Content="7" Width="60" Height="70" Margin="-240 -60 0 0"
                 Click="Button7_Click"></Button>
-        <Button x:Name="button8" FontSize="34" Content="8" Width="60" Height="70" Margin="-80 -80 0 0"
+        
+        <Button x:Name="button8" FontSize="34" Content="8" Width="60" Height="70" Margin="-80 -60 0 0"
                 Click="Button8_Click"></Button>
-        <Button x:Name="button9" FontSize="34" Content="9" Width="60" Height="70" Margin="80 -80 0 0"
+        
+        <Button x:Name="button9" FontSize="34" Content="9" Width="60" Height="70" Margin="80 -60 0 0"
                 Click="Button9_Click"></Button>
-        <Button x:Name="buttonAdd" Background="NavajoWhite" FontSize="34" Content="+" Width="60" Height="70" Margin="240 -80 0 0"
+        
+        <Button x:Name="buttonAdd" Background="NavajoWhite" FontSize="34" Content="+" Width="60" Height="70" Margin="240 -60 0 0"
                 Click="ButtonAdd_Click"></Button>
-        <Button x:Name="button4" FontSize="34" Content="4" Width="60" Height="70" Margin="-240 80 0 0"
+        
+        
+        
+        <Button x:Name="button4" FontSize="34" Content="4" Width="60" Height="70" Margin="-240 100 0 0"
                 Click="Button4_Click"></Button>
-        <Button x:Name="button5" FontSize="34" Content="5" Width="60" Height="70" Margin="-80 80 0 0"
+        
+        <Button x:Name="button5" FontSize="34" Content="5" Width="60" Height="70" Margin="-80 100 0 0"
                 Click="Button5_Click"></Button>
-        <Button x:Name="button6" FontSize="34" Content="6" Width="60" Height="70" Margin="80 80 0 0"
+        
+        <Button x:Name="button6" FontSize="34" Content="6" Width="60" Height="70" Margin="80 100 0 0"
                 Click="Button6_Click"></Button>
-        <Button x:Name="buttonSub" Background="NavajoWhite" FontSize="34" Content="-" Width="60" Height="70" Margin="240 80 0 0"
+        
+        <Button x:Name="buttonSub" Background="NavajoWhite" FontSize="34" Content="-" Width="60" Height="70" Margin="240 100 0 0"
                 Click="ButtonSub_Click"></Button>
-        <Button x:Name="button1" FontSize="34" Content="1" Width="60" Height="70" Margin="-240 240 0 0"
+        
+        
+        
+        <Button x:Name="button1" FontSize="34" Content="1" Width="60" Height="70" Margin="-240 260 0 0"
                 Click="Button1_Click"></Button>
-        <Button x:Name="button2" FontSize="34" Content="2" Width="60" Height="70" Margin="-80 240 0 0"
+        
+        <Button x:Name="button2" FontSize="34" Content="2" Width="60" Height="70" Margin="-80 260 0 0"
                 Click="Button2_Click"></Button>
-        <Button x:Name="button3" FontSize="34" Content="3" Width="60" Height="70" Margin="80 240 0 0"
+        
+        <Button x:Name="button3" FontSize="34" Content="3" Width="60" Height="70" Margin="80 260 0 0"
                 Click="Button3_Click"></Button>
-        <Button x:Name="buttonMul" Background="NavajoWhite" FontSize="34" Content="*" Width="60" Height="70" Margin="240 240 0 0"
+        
+        <Button x:Name="buttonMul" Background="NavajoWhite" FontSize="34" Content="*" Width="60" Height="70" Margin="240 260 0 0"
                 Click="ButtonMul_Click"></Button>
-        <Button x:Name="buttonClear" Background="LightPink" FontSize="34" Content="C" Width="60" Height="70" Margin="-240 400 0 0"
-                Click="ButtonClear_Click"></Button>
-        <Button x:Name="button0" FontSize="34" Content="0" Width="60" Height="70" Margin="-80 400 0 0"
+        
+        
+        
+        <Button x:Name="buttonClean" Background="LightPink" FontSize="34" Content="C" Width="60" Height="70" Margin="-240 420 0 0"
+                Click="ButtonClean_Click"></Button>
+        
+        <Button x:Name="button0" FontSize="34" Content="0" Width="60" Height="70" Margin="-80 420 0 0"
                 Click="Button0_Click"></Button>
-        <Button x:Name="buttonEqu" Background="LightGreen" FontSize="34" Content="=" Width="60" Height="70" Margin="80 400 0 0"
+        
+        <Button x:Name="buttonEqu" Background="LightGreen" FontSize="34" Content="=" Width="60" Height="70" Margin="80 420 0 0"
                 Click="ButtonEqu_Click"></Button>
-        <Button x:Name="buttonDiv" Background="NavajoWhite" FontSize="34" Content="/" Width="60" Height="70" Margin="240 400 0 0"
+        
+        <Button x:Name="buttonDiv" Background="NavajoWhite" FontSize="34" Content="/" Width="60" Height="70" Margin="240 420 0 0"
                 Click="ButtonDiv_Click"></Button>
     </Grid>
 </Window>
